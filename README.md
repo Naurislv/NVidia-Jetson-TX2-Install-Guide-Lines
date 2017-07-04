@@ -1,6 +1,6 @@
 # Preparing Machine Learning/Computer Vision environment for NVidia Jetson TX2
 
-I made some notes while installing fresh Ubuntu LTS on NVidia Jetson TX2 with Tensorflow, Python3.5 and related Computer Vision libraries.
+Notes while installing Ubuntu 16.04.2 LTS on NVidia Jetson TX2 with Tensorflow, Python3.5 and related Computer Vision libraries.
 
 ---
 
