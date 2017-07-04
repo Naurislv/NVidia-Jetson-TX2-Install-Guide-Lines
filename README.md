@@ -43,7 +43,7 @@ For some tasks you may need extra RAM, therefore you can create swap memory. Thi
 
 * Install [OpenCV3](http://dev.t7.ai/jetson/opencv/) - v3 is necesarry for Python 3 Wrapper. Again replace python with python3 where necesarry. Build using following cmake arguments (you may want to also include OpenGL support which I did not) : `cmake -D WITH_CUDA=ON -D CUDA_ARCH_BIN="6.2" -D CUDA_ARCH_PTX="" -D WITH_LIBV4L=ON -D CUDA_FAST_MATH=ON -D CMAKE_BUILD_TYPE=RELEASE -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D BUILD_EXAMPLES=OFF -D CMAKE_INSTALL_PREFIX=/usr/local ..`
 * Upgrade pip : `pip3 install --upgrade pip`
-* Other dependecies (replace 3.5 with the python version you are using):
+* Other dependecies (replace 3.5 with the python version you are using). Order is important.:
   * sudo pip3.5 install --upgrade azure.common
   * sudo pip3.5 install --upgrade azure.servicebus
   * sudo pip3.5 install --upgrade azure.storage
