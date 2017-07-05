@@ -1,6 +1,6 @@
 # Preparing Machine Learning/Computer Vision environment for NVidia Jetson TX2
 
-Notes while installing Ubuntu 16.04.2 LTS on NVidia Jetson TX2 with Tensorflow, Python3.5 and related Computer Vision libraries.
+Notes. While installing Ubuntu 16.04.2 LTS on NVidia Jetson TX2 with Tensorflow, Python3.5 and related Computer Vision libraries.
 
 ---
 
@@ -8,11 +8,11 @@ Notes while installing Ubuntu 16.04.2 LTS on NVidia Jetson TX2 with Tensorflow, 
 
 It is recommended that after unboxing NVidia Jetson TX2 you install fresh OS. NVidia make it very easy by providing JetPack (of-course there are other ways to flash TX2, but this is recommended).
 
+Follow [instructions](https://www.youtube.com/watch?v=D7lkth34rgM) to install latest Ubuntu LTS (for Tegra) on NVidia Jetson TX2 (also aplicable for TX1) using [JetPack](https://developer.nvidia.com/embedded/jetpack). While writing this piece JetPack can be installed only on Ubuntu 16.04. If Ubuntu is not operating system you are working on then most likely easiest way to flesh TX using JetPack would be to mount USB flash drive with Ubuntu 16.04 and boot from it - then select Try Ubuntu and do everything described in instructions. VirtualBox did not work for me - took me some time to realize that this is better way to do it.
+
 You should be able to login using SSH without password but for some operations you may need root priviledges. Default credentials :
 
 **username:** nvidia ; **password:** nvidia
-
-Follow [instructions](https://www.youtube.com/watch?v=D7lkth34rgM) to install latest Ubuntu LTS (for Tegra) on NVidia Jetson TX2 (also aplicable for TX1) using [JetPack](https://developer.nvidia.com/embedded/jetpack). While writing this piece JetPack can be installed only on Ubuntu 14 or 16.
 
 Run fan:
 
