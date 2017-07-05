@@ -14,7 +14,7 @@ You should be able to login using SSH without password but for some operations y
 
 **username:** nvidia ; **password:** nvidia
 
-`ssh nvidia@ip-address`
+`ssh nvidia@ip.address`
 
 Run fan:
 
@@ -34,32 +34,42 @@ For some tasks you may need extra RAM, therefore you can create swap memory. Thi
 * Activate the swap area: `sudo swapon swapfile`
 * Confirm swap area being used: `swapon -s`
 
+### Upgrade Ubuntu
+
+`sudo apt-get update && sudo apt-get upgrade`
+
+## Some useful commands which may become handing along the way
+
+* Check disk space: `df`
+* Transfer files via SSH using SCP (execute on Host): `scp -r file_path nvidia@ip.address:/home/nvidia/`
+
 ## Install Python, Tensorflow and Computer Vision Libraries
 
 *Keep in mind that world is changing very fast and instructions below may not work at the time you are preparing your environment.*
 
 * Follow [instructions](https://syed-ahmed.gitbooks.io/nvidia-jetson-tx2-recipes/content/first-question.html) to compile and install Tensorflow on TX2. You may need to install some dependencies while following instructions such as wget, curl and so on. Feel free to do it. __When installing python replace python with python3 to install 3.n version like this:__
 
-* Install [OpenCV3](http://dev.t7.ai/jetson/opencv/) - v3 is necesarry for Python 3 Wrapper. Again replace python with python3 where necesarry. Build using following cmake arguments (you may want to also include OpenGL support which I did not) : `cmake -D WITH_CUDA=ON -D CUDA_ARCH_BIN="6.2" -D CUDA_ARCH_PTX="" -D WITH_LIBV4L=ON -D CUDA_FAST_MATH=ON -D CMAKE_BUILD_TYPE=RELEASE -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D BUILD_EXAMPLES=OFF -D CMAKE_INSTALL_PREFIX=/usr/local ..`
-* Upgrade pip : `pip3 install --upgrade pip`
-* Other dependecies (replace 3.5 with the python version you are using). Order is important.:
-  * `sudo pip3.5 install --upgrade azure.common` (If you will not use MS Azure ignore this)
-  * `sudo pip3.5 install --upgrade azure.servicebus` (optional)
-  * `sudo pip3.5 install --upgrade azure.storage` 
-  * `sudo pip3.5 install --upgrade matplotlib`
-  * `sudo pip3.5 install --upgrade configparser`
-  * `sudo pip3.5 install --upgrade numpy`
-  * `sudo apt-get install python3-sympy python3-nose` (possible dependecy for scipy)
-  * `sudo pip3.5 install --upgrade ipython`
-  * `sudo pip3.5 install --upgrade pandas`
-  * `sudo apt-get install libblas-dev liblapack-dev libatlas-base-dev gfortran` (dependecy for scypy)
-  * `sudo pip3.5 install --upgrade scipy`
-  * `sudo pip3.5 install --upgrade sklearn`
-* Better exceptions:
-  * `git clone https://github.com/paradoxxxzero/better-exceptions-hook`
-  * `cd better-exceptions-hook/`
-  * `sudo python3.5 setup.py install`
+  `sudo apt-get install python3-numpy swig python3-dev python3-pip python3-wheel -y`
 
+* Upgrade pip : `sudo pip3 install --upgrade pip`
+
+* Install [OpenCV3](http://dev.t7.ai/jetson/opencv/) - v3 is necesarry for Python 3 Wrapper. Again replace python with python3 where necesarry. Build using following cmake arguments (you may want to also include OpenGL support which I did not) : `cmake -D WITH_CUDA=ON -D CUDA_ARCH_BIN="6.2" -D CUDA_ARCH_PTX="" -D WITH_LIBV4L=ON -D CUDA_FAST_MATH=ON -D CMAKE_BUILD_TYPE=RELEASE -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D BUILD_EXAMPLES=OFF -D CMAKE_INSTALL_PREFIX=/usr/local ..`
+
+* Other dependecies (replace 3.5 with the python version you are using). Order is important.:
+  1. `sudo pip3.5 install --upgrade azure.common` (If you will not use MS Azure ignore this)
+  2. `sudo pip3.5 install --upgrade azure.servicebus` (If you will not use MS Azure ignore this)
+  3. `sudo pip3.5 install --upgrade azure.storage` (If you will not use MS Azure ignore this)
+  4. `sudo pip3.5 install --upgrade setuptools ez_setup`
+  5. `sudo pip3.5 install --upgrade matplotlib`
+  6. `sudo pip3.5 install --upgrade configparser`
+  7. `sudo pip3.5 install --upgrade numpy`
+  8. `sudo apt-get install libblas-dev liblapack-dev libatlas-base-dev gfortran` (dependecies for scypy)
+  9. `sudo pip3.5 install --upgrade scipy`
+  10. `sudo pip3.5 install --upgrade pandas`
+  11. `sudo pip3.5 install --upgrade sklearn`
+* Better exceptions:
+  1. `git clone https://github.com/paradoxxxzero/better-exceptions-hook`
+  2. `cd better-exceptions-hook/ && sudo python3.5 setup.py install`
 
 ## Boost Performance of Jetson TX2
 
